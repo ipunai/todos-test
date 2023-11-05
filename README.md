@@ -12,7 +12,7 @@ Start Project
 $ yarn dev
 ```
 
-## About Project
+## About the Project
 
 - Animation/UX Improvement
 - Caching Todos for impeove render speed
