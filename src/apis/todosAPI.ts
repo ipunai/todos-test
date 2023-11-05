@@ -49,7 +49,7 @@ export const deleteTodo = async (id: string) => {
   return response.json();
 };
 
-export const toggleCompletion = async (id: string, checked: boolean) => {
+export const submitCompletion = async (id: string, checked: boolean) => {
   const todo = await fetch(`${baseURL}/${id}`).then((res) => res.json());
   const updatedTodo = { ...todo, completed: checked };
 
@@ -61,7 +61,7 @@ export const toggleCompletion = async (id: string, checked: boolean) => {
     body: JSON.stringify(updatedTodo),
   });
   if (!response.ok) {
-    throw new Error("Failed to toggle completion");
+    throw new Error("Failed to submit completion");
   }
   return response.json();
 };

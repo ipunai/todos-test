@@ -3,7 +3,7 @@ import {
   createTodo as apiCreateTodo,
   editTodo as apiEditTodo,
   deleteTodo as apiDeleteTodo,
-  toggleCompletion as apiToggleCompletion,
+  submitCompletion as apiSubmitCompletion,
 } from "../apis/todosAPI";
 import { useErrorTodo } from "./useErrorTodo";
 import { useTodoContext } from "./useTodoContext";
@@ -53,7 +53,7 @@ export const useHandleTodos = () => {
   const checkTodo = useCallback(
     async (id: string, checked: boolean) => {
       try {
-        const updatedTodo = await apiToggleCompletion(id, checked);
+        const updatedTodo = await apiSubmitCompletion(id, checked);
         setTodos(todos.map((todo) => (todo.id === id ? updatedTodo : todo)));
       } catch (error) {
         onSetErrorTodo(error);
