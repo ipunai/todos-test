@@ -1,0 +1,13 @@
+@import "/variables";
+
+.task-component {
+  @media (max-width: 720px) {
+    padding: 0 24px;
+  }
+
+  &__heading-conitaner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

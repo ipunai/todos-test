@@ -1,0 +1,39 @@
+@import "./styles";
+
+html,
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: #d1d0d9;
+  display: flex;
+  justify-content: center;
+  padding-top: 24px;
+  height: 100%;
+
+  @media (max-width: 720px) {
+    display: block;
+    /* I increase font-size for display narrower than 720px */
+    font-size: 24px;
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 12px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

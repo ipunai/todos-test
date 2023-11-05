@@ -1,0 +1,20 @@
+@import "/variables";
+
+.todo-app {
+  width: 720px;
+  height: 676px;
+  background-color: $light-gray;
+  font-family: $regular;
+  border-radius: 20px;
+  padding: 60px 100px;
+  box-sizing: border-box;
+
+  // Media query for browser widths of 720px or less
+  @media (max-width: 720px) {
+    width: 100%;
+    padding: 0;
+    border-radius: 0;
+
+    // Add any other styles you want to change for smaller screens
+  }
+}

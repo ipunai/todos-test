@@ -1,0 +1,41 @@
+@import "/variables";
+
+// .select-component__sorting-select {
+//   font-size: $tx13;
+//   width: 110px;
+//   height: 30px;
+//   padding: 8px 10px;
+//   background-color: #fff;
+//   border: 1px solid #caced1;
+//   border-radius: 0.25rem;
+//   color: #000;
+// }
+
+.select-component {
+  &__parent {
+    width: 110px;
+    height: 30px;
+    background-color: $white;
+    padding: 8px 10px;
+    border-radius: $round-md;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+
+  &__popover {
+    width: 110px;
+    padding: 10px 6px;
+    box-sizing: border-box;
+
+    &-option {
+      padding: 6px 8px;
+      border-radius: $round-md;
+      transition: $fast;
+      cursor: pointer;
+      &:hover {
+        background-color: $primary;
+        color: $white;
+      }
+    }
+  }
+}

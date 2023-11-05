@@ -1,0 +1,24 @@
+@import "/variables";
+
+.popover-component__popover {
+  transition: $slow;
+  position: absolute;
+  background-color: $white;
+  border-radius: $round-md;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1);
+  font-family: $regular;
+  left: var(--popover-left);
+  top: var(--popover-top);
+  &[data-open="false"] {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-18px);
+  }
+  &[data-open="true"] {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
