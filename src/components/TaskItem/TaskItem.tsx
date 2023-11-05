@@ -1,11 +1,10 @@
 import { useRef, type KeyboardEvent } from "react";
 import { useEditTodo, useHandleTodos } from "../../hooks";
-import { Checkbox } from "../Checkbox/Checknox";
-import { Popover } from "../Popover/Popover";
-import { DotsIcon } from "./DotsIcon";
 import "./TaskItem.scss";
 import { type TaskItemProps } from "./TaskItem.types";
 import { useFadeTodo } from "./useFadeTodos";
+import { EditMode } from "./components/EditMode";
+import { ViewMode } from "./components/ViewMode";
 
 export const TaskItem = ({ todo }: TaskItemProps) => {
   const { deleteTodo, checkTodo, editTodo } = useHandleTodos();
@@ -38,6 +37,7 @@ export const TaskItem = ({ todo }: TaskItemProps) => {
   };
   return (
     <li
+      aria-label="task-item-component"
       className="task-item-component"
       ref={liRef}
       tabIndex={0}
@@ -45,57 +45,20 @@ export const TaskItem = ({ todo }: TaskItemProps) => {
       data-is-edit={!!editingId}
     >
       {editingId === todo.id ? (
-        <div className="task-item-component__edit-input">
-          <input
-            ref={inputEditRef}
-            value={currentEdit}
-            onChange={(e) => setCurrentEdit(e.target.value)}
-            onKeyDown={onHandleEditTodoKey}
-          />
-          <button onClick={submitEditTodo}>Save</button>
-        </div>
+        <ViewMode
+          currentEdit={currentEdit}
+          inputEditRef={inputEditRef}
+          onHandleEditTodoKey={onHandleEditTodoKey}
+          setCurrentEdit={setCurrentEdit}
+          submitEditTodo={submitEditTodo}
+        />
       ) : (
-        <div className="task-item-component__container">
-          <Checkbox
-            checked={todo.completed}
-            onChange={(checked) => {
-              checkTodo(todo.id, checked);
-            }}
-          />
-          <p
-            data-completed={todo.completed}
-            className="task-item-component__todo-text"
-          >
-            {todo.title}
-          </p>
-
-          <div className="task-item-component__menu">
-            <Popover
-              popover={
-                <div className="task-item-component__menu-list">
-                  <div
-                    className="task-item-component__menu-list-item"
-                    onClick={() => onEditTodo()}
-                  >
-                    Edit
-                  </div>
-                  <div
-                    data-delete
-                    className="task-item-component__menu-list-item"
-                    onClick={() => deleteTodo(todo.id)}
-                  >
-                    Delete
-                  </div>
-                </div>
-              }
-              parent={
-                <div className="task-item-component__dots-icon">
-                  <DotsIcon />
-                </div>
-              }
-            />
-          </div>
-        </div>
+        <EditMode
+          todo={todo}
+          checkTodo={checkTodo}
+          onEditTodo={onEditTodo}
+          deleteTodo={deleteTodo}
+        />
       )}
     </li>
   );

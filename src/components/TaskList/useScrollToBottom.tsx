@@ -6,7 +6,7 @@ export const useScrollToBottom = (todos: Todo[]) => {
   const ulRef = useRef<HTMLUListElement>(null);
 
   useEffect(() => {
-    if (ulRef.current) {
+    if (ulRef.current && typeof ulRef.current.scrollTo === "function") {
       const lastChild = ulRef.current.lastChild as HTMLLIElement;
       const isFadeOut = lastChild?.getAttribute?.(DATA_FADE);
       if (isFadeOut === "out") {
