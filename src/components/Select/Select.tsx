@@ -2,7 +2,7 @@ import { type SelectProps } from "./Select.types";
 import "./Select.scss";
 import { Popover } from "../Popover/Popover";
 import { useState } from "react";
-import { ChevDownIcon } from "./ChevDownIcon";
+import { ChevDownIcon } from "../../constants/ChevDownIcon";
 import { type ReactElement } from "react";
 
 export const Select = ({

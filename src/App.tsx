@@ -3,12 +3,10 @@ import { Progress } from "./components/Progress/Progress";
 import { Task } from "./components/Task/Task";
 import { Theme } from "./components/Theme/Theme";
 import { Context } from "./context/Context";
-import { useFechTodo } from "./hooks";
-import { useCacheTodo } from "./hooks/useCacheTodo";
+import { useFechTodo, useCacheTodo } from "./hooks";
 
 const App: React.FC = () => {
   // if (loading) return <p>Loading...</p>;
-  // if (error) return <p>Error: {error}</p>;
   const { todos, setTodos } = useFechTodo();
   const { cachedTodo } = useCacheTodo(todos);
 

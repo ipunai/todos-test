@@ -1,7 +1,7 @@
 import { type Todo } from "../../../types/Todo";
 import { Checkbox } from "../../Checkbox/Checknox";
 import { Popover } from "../../Popover/Popover";
-import { DotsIcon } from "../DotsIcon";
+import { DotsIcon } from "../../../constants/DotsIcon";
 
 export const EditMode = ({
   todo,

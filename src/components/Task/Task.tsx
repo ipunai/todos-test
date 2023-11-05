@@ -1,7 +1,6 @@
 import "./Task.scss";
 import { SortOrder, type TaskProps } from "./Task.types";
-import { useSortTodo } from "../../hooks";
-import { useTodoContext } from "../../hooks/useTodoContext";
+import { useSortTodo, useTodoContext } from "../../hooks";
 import { Select } from "../Select/Select";
 import { TaskList } from "../TaskList/TaskList";
 import { Input } from "../Input/Input";
