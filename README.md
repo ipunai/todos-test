@@ -21,9 +21,10 @@ $ yarn dev
 - Components from scratch
 - Keyboard events When Edit can click "ESC" and when Add new Task can click "Enter"
 - Responsive when @media (max-width: 720px)
+- Add simple Error handler
 
 ## อาจจะมีข้อผิดพลาดจุดไหน ไม่เรียบร้อย ขอภับไว้ ณ ที่นี้ครับด้วย
 
 ## Project นี้ใช้เวลาทำ 2 วันนะครับ (เสาร์/อาทิตย์)
 
-## Thanks for this testing
+## Thanks for this testing 🙏
