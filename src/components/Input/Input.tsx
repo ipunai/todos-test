@@ -13,7 +13,12 @@ export const Input = ({}: InputProps) => {
   };
 
   const handleEnterKey = (e: KeyboardEvent) => {
-    if (e.key === "Enter" && buttonRef.current) buttonRef.current.click();
+    console.log("handleEnterKey", e.key);
+    if (e.key === "Enter" && buttonRef.current) {
+      console.log("handleEnterKey", e.key);
+
+      buttonRef.current.click();
+    }
     /**
      * TODO: improve this function by using handleAddTodo() directly
      * this upper condition seem wired, fix next time
@@ -46,7 +51,12 @@ export const Input = ({}: InputProps) => {
        * BUG: when add todo it's not add new TodoItem with new line if I call handleAddTodo() directly
        * Problem is about caching todos. this "hidden-button" is just workaround
        */}
-      <button hidden ref={buttonRef} onClick={handleAddTodo} />
+      <button
+        aria-label="add-todo-button"
+        hidden
+        ref={buttonRef}
+        onClick={handleAddTodo}
+      />
     </div>
   );
 };

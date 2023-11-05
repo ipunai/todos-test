@@ -16,19 +16,22 @@ export const Select = ({ defaultValue, options, onChange }: SelectProps) => {
     <div className="select-component">
       <Popover
         parent={
-          <div className="select-component__parent">
+          <div className="select-component__parent" role="combobox">
             <span>{selected?.text}</span>
 
             <ChevDownIcon />
           </div>
         }
         popover={
-          <div className="select-component__popover">
+          <div role="list" className="select-component__popover">
             {options.map((option) => (
               <div
+                role="option"
+                aria-selected={value === option.value}
                 key={option.value}
                 onClick={() => selectOption(option.value)}
                 className="select-component__popover-option"
+                aria-label={option.value}
               >
                 {option.text}
               </div>
