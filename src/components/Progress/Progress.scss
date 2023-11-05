@@ -13,13 +13,13 @@
   }
 
   &__header {
-    color: $white;
+    color: $base-white;
   }
 
   &__bar {
     width: 100%;
     height: 8px;
-    background-color: $darkgray;
+    background-color: $gray-500;
     border-radius: $round-lg;
   }
 
@@ -28,7 +28,7 @@
     background-color: $white;
     border-radius: $round-md;
     width: var(--complete-percentage);
-    transition: $slow;
+    transition: width $slow;
   }
 
   &__percentage-text {

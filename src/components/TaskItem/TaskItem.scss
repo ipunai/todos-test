@@ -66,7 +66,7 @@ ul {
         color: $black;
 
         &[data-completed="true"] {
-          color: $a-gray;
+          color: $gray-400;
           text-decoration: line-through;
         }
       }
@@ -83,10 +83,10 @@ ul {
           cursor: pointer;
           transition: background-color $slow;
           &:hover {
-            background-color: $light-gray;
+            background-color: $gray-100;
           }
           &:active {
-            background-color: $soft-gray;
+            background-color: $gray-300;
           }
         }
       }
@@ -112,11 +112,12 @@ ul {
     cursor: pointer;
     transition: background-color $fast;
     user-select: none;
+    color: $black;
     &:hover {
-      background-color: $light-gray;
+      background-color: $gray-100;
     }
     &:active {
-      background-color: $soft-gray;
+      background-color: $gray-300;
     }
     &[data-delete] {
       color: $accent;

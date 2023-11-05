@@ -1,16 +1,5 @@
 @import "/variables";
 
-// .select-component__sorting-select {
-//   font-size: $tx13;
-//   width: 110px;
-//   height: 30px;
-//   padding: 8px 10px;
-//   background-color: #fff;
-//   border: 1px solid #caced1;
-//   border-radius: 0.25rem;
-//   color: #000;
-// }
-
 .select-component {
   &__parent {
     width: 110px;
@@ -20,6 +9,9 @@
     border-radius: $round-md;
     cursor: pointer;
     box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   &__popover {
@@ -31,10 +23,11 @@
       padding: 6px 8px;
       border-radius: $round-md;
       transition: $fast;
+      color: $black;
       cursor: pointer;
       &:hover {
         background-color: $primary;
-        color: $white;
+        color: $base-white;
       }
     }
   }
