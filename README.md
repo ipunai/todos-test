@@ -22,6 +22,7 @@ $ yarn dev
 - Keyboard events When Edit can click "ESC" and when Add new Task can click "Enter"
 - Responsive when @media (max-width: 720px)
 - Add simple Error handler
+- Auto scroll to bottom when task has more than 5 items
 
 ตรงจุดการ fetcing data ผมใช้ native fetching เลย จริงๆสามารถใช้ react-query / react-swr ได้ครับ แต่ผมเข้าใจว่าโจทย์อยากให้เน้นเรื่อง fundamental เลยไปทางนั้นครับผม
 
