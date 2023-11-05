@@ -31,6 +31,7 @@ export const Theme = ({ children }: { children: ReactNode }) => {
       <div className="theme-component">
         <button onClick={clearTodoCached}>Clear Todo Cached</button>
         <button onClick={onToggleTheme}>Toggle Theme</button>
+        <div className="theme-component__error-text"></div>
       </div>
       {children}
     </>

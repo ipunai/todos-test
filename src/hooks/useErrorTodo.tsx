@@ -1,9 +1,14 @@
-import { useState } from "react";
-
 export const useErrorTodo = () => {
-  const [error, setError] = useState<string | null>(null);
-  const onSetErrorTodo = (error: unknown) => {
-    setError(error instanceof Error ? error.message : String(error));
+  const getErrorText = (error: unknown) => {
+    return error instanceof Error ? error.message : String(error);
   };
-  return { error, onSetErrorTodo };
+  const onSetErrorTodo = (error: unknown) => {
+    const errorTextDisplay = document.body.querySelector<HTMLElement>(
+      ".theme-component__error-text"
+    );
+    if (errorTextDisplay) {
+      errorTextDisplay.dataset.errorText = getErrorText(error);
+    }
+  };
+  return { onSetErrorTodo };
 };

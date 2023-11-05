@@ -19,4 +19,16 @@
       background-color: rgb(157, 157, 157);
     }
   }
+
+  .theme-component__error-text[data-error-text] {
+    &::after {
+      content: attr(data-error-text);
+      color: white;
+      background-color: $accent;
+      border-radius: $round-xl;
+      display: grid;
+      place-items: center;
+      padding: 14px;
+    }
+  }
 }
