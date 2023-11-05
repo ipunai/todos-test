@@ -1,0 +1,22 @@
+@import "/variables";
+
+.theme-component {
+  margin-bottom: 24px;
+  display: flex;
+  column-gap: 12px;
+  button {
+    padding: 12px;
+    border-radius: 99px;
+    background-color: white;
+    border: none;
+    transition: $slow;
+    font-size: $tx16;
+    cursor: pointer;
+    &:hover {
+      background-color: rgb(224, 224, 224);
+    }
+    &:active {
+      background-color: rgb(157, 157, 157);
+    }
+  }
+}

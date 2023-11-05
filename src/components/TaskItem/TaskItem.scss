@@ -36,6 +36,8 @@ ul {
         border: none;
         outline: none;
         font-size: $tx16;
+        background-color: $white;
+        color: $black;
       }
       button {
         all: unset;
@@ -61,6 +63,8 @@ ul {
       width: 100%;
 
       .task-item-component__todo-text {
+        color: $black;
+
         &[data-completed="true"] {
           color: $a-gray;
           text-decoration: line-through;

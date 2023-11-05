@@ -1,7 +1,7 @@
 import { useProgress } from "../../hooks";
 import "./Progress.scss";
 import { type ProgressProps } from "./Progress.types";
-import { type ReactElement } from "react";
+import { type ReactElement, type CSSProperties } from "react";
 
 export const Progress = ({}: ProgressProps): ReactElement => {
   const { completionPercentage } = useProgress();
@@ -11,7 +11,11 @@ export const Progress = ({}: ProgressProps): ReactElement => {
       <div className="progress-component__bar">
         <div
           className="progress-component__fill"
-          style={{ width: `${completionPercentage}%` }}
+          style={
+            {
+              "--complete-percentage": `${completionPercentage}%`,
+            } as CSSProperties
+          }
         ></div>
       </div>
       <h3 className="progress-component__percentage-text">

@@ -1,6 +1,7 @@
 :root {
   --primary: #585292;
   --white: #fff;
+  --black: #000000;
   --accent: #e07c7c;
   --gray: #d1d0d9;
   --darkgray: #3b3b3b;
@@ -15,4 +16,18 @@
   --tx-24: 1.5rem;
   --tx-16: 1rem;
   --tx-13: 0.813rem;
+}
+
+body.dark {
+  --light-gray: #383838;
+  --accent: #5d5d62;
+  --white: #000000;
+  --primary: #6e62db;
+  --a-gray: rgb(169, 169, 169);
+  --black: #ffffff;
+  --darkgray: #9c9c9c;
+
+  .progress-component__header {
+    --white: #ffffff;
+  }
 }
