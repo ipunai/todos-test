@@ -48,6 +48,7 @@ ul {
         color: $white;
         border-radius: $round-xl;
         transition: $slow;
+        cursor: pointer;
         &:hover {
           background-color: #49457c;
         }

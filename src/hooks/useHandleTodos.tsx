@@ -16,7 +16,6 @@ export const useHandleTodos = () => {
     async (title: string) => {
       if (title.trim() === "") return;
       try {
-        console.log("12313");
         const addedTodo = await apiCreateTodo({ title, completed: false });
         setTodos([...todos, addedTodo]);
       } catch (error) {
