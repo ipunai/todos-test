@@ -1,3 +1,4 @@
+import { useRef, type KeyboardEvent } from "react";
 import { useEditTodo, useHandleTodos } from "../../hooks";
 import { Checkbox } from "../Checkbox/Checknox";
 import { Popover } from "../Popover/Popover";
@@ -18,21 +19,40 @@ export const TaskItem = ({ todo }: TaskItemProps) => {
     startEdit,
   } = useEditTodo(editTodo);
 
+  const inputEditRef = useRef<HTMLInputElement>(null);
+
+  const onEditTodo = () => {
+    startEdit(todo);
+
+    requestAnimationFrame(() => {
+      inputEditRef.current?.focus();
+    });
+  };
+
+  const onHandleEditTodoKey = (e: KeyboardEvent) => {
+    if (e.key === "Enter") {
+      submitEditTodo();
+    } else if (e.key == "Escape") {
+      cancelEdit();
+    }
+  };
   return (
     <li
       className="task-item-component"
       ref={liRef}
       tabIndex={0}
       data-fade="out"
+      data-is-edit={!!editingId}
     >
       {editingId === todo.id ? (
-        <div>
+        <div className="task-item-component__edit-input">
           <input
+            ref={inputEditRef}
             value={currentEdit}
             onChange={(e) => setCurrentEdit(e.target.value)}
+            onKeyDown={onHandleEditTodoKey}
           />
           <button onClick={submitEditTodo}>Save</button>
-          <button onClick={cancelEdit}>Cancel</button>
         </div>
       ) : (
         <div className="task-item-component__container">
@@ -55,7 +75,7 @@ export const TaskItem = ({ todo }: TaskItemProps) => {
                 <div className="task-item-component__menu-list">
                   <div
                     className="task-item-component__menu-list-item"
-                    onClick={() => startEdit(todo)}
+                    onClick={() => onEditTodo()}
                   >
                     Edit
                   </div>

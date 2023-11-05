@@ -16,9 +16,43 @@ ul {
     border-radius: $round-xl;
     display: flex;
     align-items: center;
-    padding: 14px 22px;
+    padding: 14px 14px 14px 22px;
     box-sizing: border-box;
     transition: transform $slow, opacity $slow;
+
+    &[data-is-edit="true"] {
+      padding: 14px 4px 14px 22px;
+    }
+
+    &[data-is-edit="false"] {
+      padding: 14px 14px 14px 22px;
+    }
+
+    .task-item-component__edit-input {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      input {
+        border: none;
+        outline: none;
+        font-size: $tx16;
+      }
+      button {
+        all: unset;
+        padding: 10px 18px;
+        box-sizing: border-box;
+        background-color: $primary;
+        color: $white;
+        border-radius: $round-xl;
+        transition: $slow;
+        &:hover {
+          background-color: #49457c;
+        }
+        &:active {
+          background-color: darkblue;
+        }
+      }
+    }
 
     .task-item-component__container {
       display: flex;
