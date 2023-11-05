@@ -23,6 +23,9 @@ $ yarn dev
 - Responsive when @media (max-width: 720px)
 - Add simple Error handler
 - Auto scroll to bottom when task has more than 5 items
+- Auto focus with input field when press "Edit"
+
+ยังมีอีกหลายจุดที่อยาก improve ให้ UX ดีขึ้นได้นะครับ แต่เนืองด้วยระยะเวลาที่จำกัด
 
 ตรงจุดการ fetcing data ผมใช้ native fetching เลย จริงๆสามารถใช้ react-query / react-swr ได้ครับ แต่ผมเข้าใจว่าโจทย์อยากให้เน้นเรื่อง fundamental เลยไปทางนั้นครับผม
 
