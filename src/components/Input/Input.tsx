@@ -1,8 +1,8 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, type ReactElement } from "react";
 import { useHandleTodos } from "../../hooks";
-import { type InputProps } from "./Input.types";
 import "./Input.scss";
-export const Input = ({}: InputProps) => {
+
+export const Input = (): ReactElement => {
   const { addTodo } = useHandleTodos();
 
   const handleAddTodo = async () => {
@@ -13,10 +13,7 @@ export const Input = ({}: InputProps) => {
   };
 
   const handleEnterKey = (e: KeyboardEvent) => {
-    console.log("handleEnterKey", e.key);
     if (e.key === "Enter" && buttonRef.current) {
-      console.log("handleEnterKey", e.key);
-
       buttonRef.current.click();
     }
     /**

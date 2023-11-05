@@ -1,7 +1,11 @@
 import "./Checkbox.scss";
 import { type CheckboxProps } from "./Checkbox.types";
+import { type ReactElement } from "react";
 
-export const Checkbox = ({ checked, onChange }: CheckboxProps) => {
+export const Checkbox = ({
+  checked,
+  onChange,
+}: CheckboxProps): ReactElement => {
   return (
     <label className="checkbox-component">
       <input

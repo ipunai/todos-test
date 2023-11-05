@@ -3,6 +3,7 @@ import "./Popover.scss";
 import { useHandlePopoverBlur } from "./useHandlePopoverBlur";
 import { createPortal } from "react-dom";
 import { type CSSProperties } from "react";
+
 export const Popover = ({ parent, popover }: PopoverProps) => {
   const {
     containerRef,

@@ -1,9 +1,8 @@
 import { useProgress } from "../../hooks";
 import "./Progress.scss";
-import { type ProgressProps } from "./Progress.types";
 import { type ReactElement, type CSSProperties } from "react";
 
-export const Progress = ({}: ProgressProps): ReactElement => {
+export const Progress = (): ReactElement => {
   const { completionPercentage } = useProgress();
   return (
     <div className="progress-component">

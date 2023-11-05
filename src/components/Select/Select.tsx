@@ -3,7 +3,13 @@ import "./Select.scss";
 import { Popover } from "../Popover/Popover";
 import { useState } from "react";
 import { ChevDownIcon } from "./ChevDownIcon";
-export const Select = ({ defaultValue, options, onChange }: SelectProps) => {
+import { type ReactElement } from "react";
+
+export const Select = ({
+  defaultValue,
+  options,
+  onChange,
+}: SelectProps): ReactElement => {
   const [value, setValue] = useState(defaultValue);
   const selected = options.find((v) => v.value === value);
 
